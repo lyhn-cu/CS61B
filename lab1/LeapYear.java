@@ -1,10 +1,11 @@
 /** Class that determines whether or not a year is a leap year.
- *  @author YOUR NAME HERE
+ *  @author lyhn
  */
 public class LeapYear {
 
     /** Calls isLeapYear to print correct statement.
      *  @param  year to be analyzed
+        Divide by 400 or divide by 4 not by 100 ==> Leap year
      */
     public static boolean isLeapYear(int year) {
         if ((year % 400 == 0) || (((year % 4) == 0) && (year % 100 != 0))) {return true;}
