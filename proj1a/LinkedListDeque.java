@@ -5,12 +5,12 @@ public class LinkedListDeque<T> {
         public Node next;
         public Node prev;
 
-
         public Node(T i, Node n) {
             item = i;
             next = n;
             prev = null;
         }
+
     }
 
     private Node sentinel;
@@ -45,7 +45,7 @@ public class LinkedListDeque<T> {
         inserted.prev = sentinel;
         sentinel.next = inserted;
         inserted.next.prev = inserted;
-        size += 1;
+        size ++;
         if (size == 1) {
             last = inserted;
         }
@@ -57,7 +57,7 @@ public class LinkedListDeque<T> {
         last.next = inserted;
         sentinel.prev = inserted;
         last = inserted;
-        size += 1;
+        size ++;
     }
 
     public boolean isEmpty() {
@@ -102,8 +102,9 @@ public class LinkedListDeque<T> {
 
     public Node getR(Node p, int index) {
         Node pp = p.next;
+        int k = index;
         if (index == 0) {return pp;}
-        else {return getR(pp, index-1);}
+        else {return getR(pp, k-1);}
     }
 
     public T getRecursive(int index) {
