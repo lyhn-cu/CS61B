@@ -1,6 +1,6 @@
 public class LinkedListDeque<T> {
 
-    public class Node {
+    private class Node {
         public T item;
         public Node next;
         public Node prev;
@@ -15,7 +15,7 @@ public class LinkedListDeque<T> {
 
     private Node sentinel;
     private Node last;
-    public int size;
+    private int size;
 
 
 
@@ -26,7 +26,7 @@ public class LinkedListDeque<T> {
         sentinel.prev = last;
         size = 0;
     }
-
+    /* Asked by Gradescope
     public LinkedListDeque(T x) {
         sentinel = new Node(null, null);
         sentinel.next = new Node(x, sentinel);
@@ -35,6 +35,7 @@ public class LinkedListDeque<T> {
         last.prev = sentinel;
         size = 1;
     }
+    */
 
     public int size() {
         return size;
@@ -80,6 +81,7 @@ public class LinkedListDeque<T> {
         sentinel.next = sentinel.next.next;
         sentinel.next.prev = sentinel;
         if (size > 0) {size --;}
+        if (size == 0 ) {last = sentinel;}
         return removed.item;
     }
 
@@ -100,7 +102,7 @@ public class LinkedListDeque<T> {
         return p.next.item;
     }
 
-    public Node getR(Node p, int index) {
+    private Node getR(Node p, int index) {
         Node pp = p.next;
         int k = index;
         if (index == 0) {return pp;}

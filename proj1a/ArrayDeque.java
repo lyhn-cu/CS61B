@@ -12,6 +12,7 @@ public class ArrayDeque<T> {
         nextLast = 0;
     }
 
+    /* Asked by Gradescope
     public ArrayDeque(T x) {
         items = (T []) new Object[8];
         items[0] = x;
@@ -21,6 +22,7 @@ public class ArrayDeque<T> {
         size = 1;
 
     }
+    */
 
     public int size() {
         return size;
@@ -81,7 +83,7 @@ public class ArrayDeque<T> {
         }
     }
 
-    public void half() {
+    private void half() {
 
         //half() after removed() so the array can not be full, no exception as in resize();
 
