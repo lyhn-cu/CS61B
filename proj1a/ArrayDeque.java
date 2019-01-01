@@ -106,7 +106,7 @@ public class ArrayDeque<T> {
         items[nextFirst] = null;
         if (size > 0) {size --;}
         if (items.length >= 16) {
-            if (size / items.length < 0.25) {
+            if (size * 1.0 / items.length < 0.25) {
                 half();
             }
         }
@@ -127,7 +127,7 @@ public class ArrayDeque<T> {
     }
 
     public T get(int index) {
-        return items[index];
+        return items[(nextFirst + 1 + index) % items.length];
     }
 
 
