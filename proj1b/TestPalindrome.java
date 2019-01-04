@@ -41,8 +41,7 @@ public class TestPalindrome {
     public void testisPalindromebyN() {
         CharacterComparator obn = new OffByN(5);
         assertTrue(palindrome.isPalindrome("binding", obn));
-
-
+        assertFalse(palindrome.isPalindrome("bindding", obn));
 
     }
 
