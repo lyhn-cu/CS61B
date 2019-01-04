@@ -7,13 +7,11 @@ public class Palindrome {
         }
     return chardeque;
     }
-    private boolean Palindromeindicator = true;
-    private boolean Palindromeindicatorby1 = true;
 
     private boolean comparison(Deque deque) {
-        if (deque.removeFirst() != deque.removeLast()) {Palindromeindicator = false;}
-        if (deque.size() > 1 && Palindromeindicator == true) {return comparison(deque);}
-        else return Palindromeindicator;
+        if (deque.removeFirst() != deque.removeLast()) {return false;}
+        if (deque.size() > 1) {return comparison(deque);}
+        else return true;
     }
 
     public boolean isPalindrome(String word) {
@@ -23,9 +21,9 @@ public class Palindrome {
     }
 
     private boolean comparisonby1(Deque deque, CharacterComparator cc) {
-        if (!cc.equalChars((Character) deque.removeFirst(), (Character) deque.removeLast())) {Palindromeindicatorby1 = false;}
-        if (deque.size() > 1 && Palindromeindicatorby1 == true) {return comparisonby1(deque, cc);}
-        else return Palindromeindicatorby1;
+        if (!cc.equalChars((Character) deque.removeFirst(), (Character) deque.removeLast())) {return false;}
+        if (deque.size() > 1) {return comparisonby1(deque, cc);}
+        else return true;
     }
 
     public boolean isPalindrome(String word, CharacterComparator cc) {

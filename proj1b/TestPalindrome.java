@@ -18,7 +18,7 @@ public class TestPalindrome {
 
     @Test
     public void testisPalindrome() {
-        assertTrue(palindrome.isPalindrome("a"));
+        assertTrue(palindrome.isPalindrome("aaaaabbbaaaaa"));
         assertTrue(palindrome.isPalindrome("cc"));
         assertTrue(palindrome.isPalindrome("cac"));
         assertTrue(palindrome.isPalindrome("racecar"));
@@ -31,7 +31,7 @@ public class TestPalindrome {
     @Test
     public void testisPalindromeby1() {
         CharacterComparator obo = new OffByOne();
-        assertTrue(palindrome.isPalindrome("a", obo));
+        assertTrue(palindrome.isPalindrome("detrude", obo));
         assertTrue(palindrome.isPalindrome("ab", obo));
         assertTrue(palindrome.isPalindrome("acdcdb", obo));
 
@@ -39,11 +39,9 @@ public class TestPalindrome {
 
     @Test
     public void testisPalindromebyN() {
-        CharacterComparator obn = new OffByN(3);
-        assertTrue(palindrome.isPalindrome("a", obn));
-        assertTrue(palindrome.isPalindrome("aadadd", obn));
-        assertTrue(palindrome.isPalindrome("abebed", obn));
-        assertFalse(palindrome.isPalindrome("acacacac", obn));
+        CharacterComparator obn = new OffByN(5);
+        assertTrue(palindrome.isPalindrome("binding", obn));
+
 
 
     }
