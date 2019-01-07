@@ -68,7 +68,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
      */
     public T peek() {
         //  Return the first item. None of your instance variables should change.
-        return rb[first];
+        return rb[(first - 1 + capacity) % capacity] ;
     }
 
     public class KeyIterator implements Iterator<T>{
