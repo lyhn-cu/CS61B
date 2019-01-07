@@ -67,8 +67,11 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
      * Return oldest item, but don't remove it.
      */
     public T peek() {
+        if (fillCount == 0) {
+            throw new RuntimeException("Ring buffer underflow.");
+        }
         //  Return the first item. None of your instance variables should change.
-        return rb[(first - 1 + capacity) % capacity] ;
+        return rb[first];
     }
 
     public class KeyIterator implements Iterator<T>{

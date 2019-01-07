@@ -57,7 +57,7 @@ public class GuitarString {
         if (!buffer.isEmpty()) {
             return buffer.peek();
         }
-        return -1;
+        return 0;
     }
 
 }
